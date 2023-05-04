@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <div *ngIf="!loading" class="body">
+    <img class="logo" src="../../../assets/img/signIn.png" alt="img signIn">
+    <h3>Registrar Usuario</h3>
+    <div class="form-floating mb-3 mt-3">
+      <input type="text" [(ngModel)]="login" class="form-control" id="floatingInput" placeholder="Ingrese Usuario">
+      <label>Usuario</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="password" [(ngModel)]="password" class="form-control" id="floatingInput" placeholder="Password">
+      <label>Password</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="password" [(ngModel)]="confirmPassword" class="form-control" id="floatingInput" placeholder="Repetir Password">
+      <label>Repetir Password</label>
+    </div>
+    <div class="d-grid gap-2">
+      <button type="button" (click)="addUser()" class="btn btn-dark btn-lg">Registrar</button>
+    </div>
+    <a routerLink="/login">Ingresar</a>
+  </div>
+  <app-spinner *ngIf="loading"></app-spinner>
+</div>
