@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 bg-secondary d-flex flex-column vh-100">
+      <!-- Contenido del menú -->
+      <app-sidenav></app-sidenav>
+    </div>
+    <div class="col-md-11 overflow-auto">
+      <app-navbar></app-navbar>
+      <!-- Contenido principal -->
+      <div>
+        <h2>Usuarios</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th *ngFor="let column of columnsNames">{{ column }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let objeto of listObject">
+              <td *ngFor="let column of columnsNames">{{ objeto[column] }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
